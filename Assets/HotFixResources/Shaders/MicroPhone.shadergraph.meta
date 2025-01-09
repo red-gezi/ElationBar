@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: da6e94a0fc29dfa4e9280e334bf3e07b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: shaders.gezi
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

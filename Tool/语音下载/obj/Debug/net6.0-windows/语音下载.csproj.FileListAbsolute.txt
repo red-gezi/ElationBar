@@ -1,0 +1,16 @@
+D:\VSProject\语音下载\bin\Debug\net6.0-windows\语音下载.exe
+D:\VSProject\语音下载\bin\Debug\net6.0-windows\语音下载.deps.json
+D:\VSProject\语音下载\bin\Debug\net6.0-windows\语音下载.runtimeconfig.json
+D:\VSProject\语音下载\bin\Debug\net6.0-windows\语音下载.dll
+D:\VSProject\语音下载\bin\Debug\net6.0-windows\语音下载.pdb
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.Form1.resources
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.csproj.GenerateResource.cache
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.AssemblyInfoInputs.cache
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.AssemblyInfo.cs
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.csproj.CoreCompileInputs.cache
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.dll
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\refint\语音下载.dll
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.pdb
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\语音下载.genruntimeconfig.cache
+D:\VSProject\语音下载\obj\Debug\net6.0-windows\ref\语音下载.dll

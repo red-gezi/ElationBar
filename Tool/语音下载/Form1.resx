@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Text_Web.Text" xml:space="preserve">
+    <value>&lt;ul data-target="voiceTab.attr" class="obc-tmpl__switch-list"&gt;&lt;li data-target="voiceTab.attr" data-index="0" class="obc-tmpl__switch-item"&gt;&lt;table class="obc-tmpl-character__voice-mobile"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/bd37188a3404af08f226eefaaa09785b_4596604796374183255.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗开始•弱点击破
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;也好，舍去了挣扎的工夫。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/7b5eb013126011255b010dc7e1904cd1_5911550811690516625.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗开始•危险预警
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;无妨，就在此了结。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/6f77f4ecccafd84c4a75a3d5ca13d7b4_7432491803616722491.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合开始•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;来到此处，是你…还是命途的意愿？&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/5d6ace3383547dc15c703186b72919ac_5320423708518571919.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合开始•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;我们该启程了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a0c9c2d74c757850bb0e31232bfa30de_6325750439922551244.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合待机
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;能用来告别的时间，本就不多了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/db7b2031ce2d20e6baa66e220f149e0f_9017352767794187219.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  普攻
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;你要去哪？&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/351004f259c761fe40f8b1ab55b7b775_6774441670150510730.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战技•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;此生如朝露，身名俱灭。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/42e867200fa6827b7515276f54dba736_2018785389827518684.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战技•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;忘川无波澜，引渡徘徊。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a8ad77538c4e06f8cabd73adedd49553_2764477731670565321.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  轻受击
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;又是这样。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/086fd7c78b8b62a5ead248fb267ec197_871197075362060626.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  重受击
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;熟悉的感觉……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/da1d58162b9cdec45757ec36bb5b19bb_8063585908794242585.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  终结技•激活
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;我为逝者哀哭……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/80e39d85fc7e7dadc4f2e49effa9eea5_217649783815712633.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  终结技•施放
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;暮雨，终将落下。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/409de51961ecf2fd4b455bfdeca5d18e_5454742364888865364.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  无法战斗
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;尘埃…终归大地……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/371886c77768a9d9aac5d3a59974ebc3_1207900939170142002.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  重回战斗
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;再陪你走一段吧。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/c689836e5df552b7239d792f9c5a1cd5_8922046982405301155.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回复生命
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;一点小伤，麻烦了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/2e15ca611462f645855f86a4da82a011_2318257972698991458.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  秘技
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;流淌吧…过往的刀光。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/3e2807d5e821c86847a54ed7620e44c0_3132369394521069009.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗胜利
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;又多了一份血债。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/e51b0d12c85b203cdfbfa38a4375e486_6221374841019759644.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启战利品•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;去找寻，便会有馈赠。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/e46477a59f68d267b3dc3cb805b55462_2621856768241623281.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启战利品•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;别忘了和伙伴们分享喜悦。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/047170cc016f4e9b3a3a179c0c93e54c_2712402706062600687.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启贵重战利品
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;看，这也是漫游银河的意义。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/4a77feed9c8d7a8fca7b4a9842fa2a58_2750040460950937571.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  解谜成功•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;生命本身…便是谜。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/6a4836e1d95281f03bdd3b9e5e75c8d6_8221567918879344812.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  解谜成功•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;也许，正确的回答不止一种。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/5fb78556cba3fbb4e997065011e8e2b8_3930906648171685178.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  发现敌方目标
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;暴雨将至。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a755abd549043a8c934bd4bb5ca40cf4_8612036744699121851.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  返回城镇
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;留下回忆之处，触着碰着，都是带刺的花……&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt; &lt;table class="obc-tmpl-character__voice-pc"&gt;&lt;colgroup&gt;&lt;col&gt; &lt;col&gt;&lt;/colgroup&gt; &lt;tbody&gt;&lt;tr&gt;&lt;td class="h3"&gt;战斗开始•弱点击破&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/bd37188a3404af08f226eefaaa09785b_4596604796374183255.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  也好，舍去了挣扎的工夫。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;战斗开始•危险预警&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/7b5eb013126011255b010dc7e1904cd1_5911550811690516625.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  无妨，就在此了结。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;回合开始•一&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/6f77f4ecccafd84c4a75a3d5ca13d7b4_7432491803616722491.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  来到此处，是你…还是命途的意愿？
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;回合开始•二&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/5d6ace3383547dc15c703186b72919ac_5320423708518571919.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  我们该启程了。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;回合待机&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a0c9c2d74c757850bb0e31232bfa30de_6325750439922551244.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  能用来告别的时间，本就不多了。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;普攻&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/db7b2031ce2d20e6baa66e220f149e0f_9017352767794187219.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  你要去哪？
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;战技•一&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/351004f259c761fe40f8b1ab55b7b775_6774441670150510730.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  此生如朝露，身名俱灭。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;战技•二&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/42e867200fa6827b7515276f54dba736_2018785389827518684.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  忘川无波澜，引渡徘徊。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;轻受击&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a8ad77538c4e06f8cabd73adedd49553_2764477731670565321.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  又是这样。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;重受击&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/086fd7c78b8b62a5ead248fb267ec197_871197075362060626.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  熟悉的感觉……
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;终结技•激活&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/da1d58162b9cdec45757ec36bb5b19bb_8063585908794242585.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  我为逝者哀哭……
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;终结技•施放&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/80e39d85fc7e7dadc4f2e49effa9eea5_217649783815712633.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  暮雨，终将落下。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;无法战斗&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/409de51961ecf2fd4b455bfdeca5d18e_5454742364888865364.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  尘埃…终归大地……
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;重回战斗&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/371886c77768a9d9aac5d3a59974ebc3_1207900939170142002.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  再陪你走一段吧。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;回复生命&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/c689836e5df552b7239d792f9c5a1cd5_8922046982405301155.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  一点小伤，麻烦了。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;秘技&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/2e15ca611462f645855f86a4da82a011_2318257972698991458.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  流淌吧…过往的刀光。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;战斗胜利&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/3e2807d5e821c86847a54ed7620e44c0_3132369394521069009.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  又多了一份血债。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;开启战利品•一&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/e51b0d12c85b203cdfbfa38a4375e486_6221374841019759644.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  去找寻，便会有馈赠。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;开启战利品•二&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/e46477a59f68d267b3dc3cb805b55462_2621856768241623281.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  别忘了和伙伴们分享喜悦。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;开启贵重战利品&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/047170cc016f4e9b3a3a179c0c93e54c_2712402706062600687.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  看，这也是漫游银河的意义。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;解谜成功•一&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/4a77feed9c8d7a8fca7b4a9842fa2a58_2750040460950937571.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  生命本身…便是谜。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;解谜成功•二&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/6a4836e1d95281f03bdd3b9e5e75c8d6_8221567918879344812.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  也许，正确的回答不止一种。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;发现敌方目标&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/5fb78556cba3fbb4e997065011e8e2b8_3930906648171685178.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  暴雨将至。
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;返回城镇&lt;/td&gt; &lt;td&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a755abd549043a8c934bd4bb5ca40cf4_8612036744699121851.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  留下回忆之处，触着碰着，都是带刺的花……
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;&lt;li data-target="voiceTab.attr" data-index="1" class="obc-tmpl__switch-item" style="display: none;"&gt;&lt;table class="obc-tmpl-character__voice-mobile"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/af5e8b00d0dcb18fa5f185625ad8b641_8401764559846405770.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗开始•弱点击破
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;也好，舍去了挣扎的工夫。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/3e6406b44c9e86b158b77a0057ce80d7_472349469883245117.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗开始•危险预警
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;无妨，就在此了结。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/061568441919ae35a88a703838b71c2a_1235772437752221772.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合开始•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;来到此处，是你…还是命途的意愿？&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/def7e9ececf8a9980d465decc1981afd_5307106373353080006.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合开始•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;我们该启程了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/188c856a693b27fbd7bd01f601deba48_4001462781291837183.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回合待机
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;能用来告别的时间，本就不多了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/3a068c7fc0606ae38d0e06db2c309a49_9202551316212178016.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  普攻
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;你要去哪？&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/ca6b03998e7438975ec22fd3cf1c6caf_6508500527202552861.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战技•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;此生如朝露，身名俱灭。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/9114e60b418a526d50d11040ed403bdb_6395434069246055394.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战技•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;忘川无波澜，引渡徘徊。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/18eac4730ebddec30a2e4a68f3dc2beb_9149739105557661779.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  轻受击
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;又是这样。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/7b795c47814b1ab367307c4632faf15f_6038539452980526078.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  重受击
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;熟悉的感觉……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/b4a8ea18a8c0bb33eac5e9005df7baf2_1999529521546870806.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  终结技•激活
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;我为逝者哀哭……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/074129d9fab67e9a7054e46ca4533e17_2219586771317350997.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  终结技•施放
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;暮雨，终将落下。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/a32531aca46fe8d05ae47ac45f36b6e8_6527561820136543257.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  无法战斗
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;尘埃…终归大地……&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/6d077ae2dd342673405c04961c9de490_125649869110047779.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  重回战斗
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;再陪你走一段吧。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/b29d8ab1edae110bddc6ace97532e48f_689792661534855955.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  回复生命
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;一点小伤，麻烦了。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/4076eb81e922a109a756a83f4869ed2b_4812099554535154117.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  秘技
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;流淌吧…过往的刀光。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/b21c9e1f46144233003cf206bda014db_6066445026849516198.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  战斗胜利
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;又多了一份血债。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/3c151dc3fe0c5e73fd8739b6f25745bf_512789189535358120.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启战利品•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;去找寻，便会有馈赠。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/e0c7f1001f02ac667d083be0784dab7a_2973362458263287210.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启战利品•二
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;别忘了和伙伴们分享喜悦。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/2e85d201183fb204d9bc95c267d51d5d_3763811454290067050.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  开启贵重战利品
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;看，这也是漫游银河的意义。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl-character__voice-item obc-tmpl-character__play-voice"&gt;&lt;div class="obc-tmpl-character__voice-btn"&gt;&lt;audio preload="none"&gt;&lt;source src="https://act-upload.mihoyo.com/sr-wiki/2024/03/30/91130434/bb7f2bb44041b8c083ed32d0fe1de148_9178510803815115828.wav"&gt;&lt;/audio&gt;&lt;/div&gt; &lt;span class="obc-tmpl-character__voice-content"&gt;
+                  解谜成功•一
+                &lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt; &lt;tr&gt;&lt;td class="obc-tmpl-character__voice-bottom"&gt;生命本身…便是谜。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class="h3"&gt;&lt;div class="obc-tmpl</value>
+  </data>
+</root>

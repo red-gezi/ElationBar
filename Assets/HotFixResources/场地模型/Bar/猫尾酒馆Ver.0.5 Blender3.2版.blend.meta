@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 99237749d7e873845be362805fce0714
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Area_MdProps_AngelShare_Item03
+    second: {fileID: 2100000, guid: a6a0dfcfb017a1c458debe94ebdcb8ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Area_Md_Prop_Common_Fleur_Flower_02_Lod0
+    second: {fileID: 2100000, guid: 7dd88fb927728834b9399d4582e1c1e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gcg_Table_CommonFringe_01
+    second: {fileID: 2100000, guid: 9119cae00e7da1b45b2536dab8f53b78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Homeworld_Exterior_Md_Build_Wall_01
+    second: {fileID: 2100000, guid: 41f8e835c4dc4514188e9b7c769cf4db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdBuild_Knight_Wall02
+    second: {fileID: 2100000, guid: 58ba769e786d6ba4aa77a6363a18743c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdBuild_Library_Floor03
+    second: {fileID: 2100000, guid: aaa12472b9863da439b0db709c1fd3ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdProps_AngelShare_Gadget01
+    second: {fileID: 2100000, guid: 6446894808ab97c4e8eacd2364cdeeec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdProps_AngelShare_Item02
+    second: {fileID: 2100000, guid: 5c794aa9c2469a043b96d6c8632ac37e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdProps_Churchbasement_Bookcase01
+    second: {fileID: 2100000, guid: a251334e722458148b887e88b9e0d4d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdProps_Knightoffice_Item01
+    second: {fileID: 2100000, guid: b0efda9b7a568f94593eeff1a62e6905, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_MdProps_Library_Book01
+    second: {fileID: 2100000, guid: 6906c5bbb7587cc49918cbc97caf86d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Build_Comp_Wall_01
+    second: {fileID: 2100000, guid: 67ffd27b83f3fd74e88a15794da58b7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Build_Comp_Wall_02
+    second: {fileID: 2100000, guid: 128d35e05e5e4704fb5efad3110013e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Light_Chandelier_02
+    second: {fileID: 2100000, guid: 13e08c48b90997c479838217f0f6fac9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Light_Chandelier_03
+    second: {fileID: 2100000, guid: fac26378073969844a0b3921461c8851, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Light_Chandelier_04
+    second: {fileID: 2100000, guid: c01216354f52d074fa874e512ffd1718, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Barrel_01
+    second: {fileID: 2100000, guid: e4da99acd93150443a100736dc20146f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Cabinet_01
+    second: {fileID: 2100000, guid: 9c80d0166fe50f7479b5ca4d7aae94be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Cabinet_03
+    second: {fileID: 2100000, guid: 6472a1ce9aa0dac4f9fd98d84ff6afac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Carpet_01
+    second: {fileID: 2100000, guid: a6da29541511bc742b6f30f57ce949bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Carpet_02
+    second: {fileID: 2100000, guid: e77eb7165e2ee39428a39195d5174e0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Chair_01
+    second: {fileID: 2100000, guid: 995fe2fa594b1594eb4b8f4f41dddb5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Gold_01
+    second: {fileID: 2100000, guid: f108ec1b214b4684e9eb7ee618615ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Noticeboard_Lit_01
+    second: {fileID: 2100000, guid: e272c17a1b4a275408eae8fb3c32c265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Shelf_01
+    second: {fileID: 2100000, guid: 93da94f8347467d4297721f28a59a0f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Shelf_02
+    second: {fileID: 2100000, guid: a7376db5c55a91745b30a1d67ce162e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Md_Prop_Treads_01
+    second: {fileID: 2100000, guid: cb1396c5cb585ef438e8c773fe4e9773, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indoor_Xm_Prop_Barbecue_Decoration_10
+    second: {fileID: 2100000, guid: 60d43a28e8da34d469f1b4d8680eac41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stages_ShadowMesh
+    second: {fileID: 2100000, guid: ddef609ed5a321d4e97a59056f9ecda4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28"
+    second: {fileID: 2100000, guid: fea9063230c71114fb37fb829211b414, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28.013"
+    second: {fileID: 2100000, guid: a8593b4bb6ee9f84092a37bb4854f866, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: "\u573A\u5730\u6A21\u578B.gezi"
+  assetBundleVariant: 
