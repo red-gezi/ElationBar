@@ -5,7 +5,6 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
     public List<Texture2D> cardTexture;
-    Texture2D x;
     GameObject model => gameObject;
     //当前位于手牌列表
     public CardType CurrentCardType {  get;  set; }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 //玩家角色管理器
 public class PlayerManager : MonoBehaviour
@@ -20,8 +21,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject gun;
     public GameObject handCardsPoint;
     public GameObject chara;
+    public List<SkinnedMeshRenderer> charaMesh;
     ////////////////////////组件/////////////////////////
-    public HandCardManager handCardManager => GetComponent<HandCardManager>();
+    public CardPosManager handCardManager => GetComponent<CardPosManager>();
     public FaceManager faceManager => GetComponent<FaceManager>();
     //是否处于等待玩家操作阶段
     public bool IsWaitPlayerOperation;
@@ -34,12 +36,12 @@ public class PlayerManager : MonoBehaviour
         handCardsPoint.transform.eulerAngles = leftTablePoint.transform.eulerAngles;
         //gun
     }
-    public void WaitPlayerOperation()
+    public void WaitPlayerOperation(float second)
     {
         IsWaitPlayerOperation = true;
         handCardManager.IsWaitForPlayCard = true;
         //开启操作ui
-        UIManager.Instance.ShowPlayerOperation();
+        UIManager.Instance.ShowPlayerOperation(second);
     }
     public void StopPlayerOperation()
     {

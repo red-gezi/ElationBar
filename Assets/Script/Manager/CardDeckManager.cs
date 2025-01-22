@@ -18,22 +18,24 @@ public class CardDeckManager : GeziBehaviour<CardDeckManager>
     }
     public async Task ShowTargetCard(CardType cardType)
     {
-        var newCard = Instantiate(cardModel, cardModel.transform.parent);
+        var showCard = Instantiate(cardModel, cardModel.transform.parent);
+        showCard.GetComponent<Card>().Init(cardType);
         await CustomThread.TimerAsync(0.5f, progress =>
         {
-            newCard.transform.localPosition = Vector3.forward * 0.5f * progress;
-            newCard.transform.localEulerAngles = Vector3.right * 90 * progress;
+            showCard.transform.localPosition = Vector3.forward * 0.5f * progress;
+            showCard.transform.localEulerAngles = Vector3.right * 90 * progress;
         });
         await CustomThread.TimerAsync(3f, async progress =>
         {
-            newCard.transform.localEulerAngles = new Vector3(90, 0, 0);
-            newCard.transform.Rotate(Vector3.up, 720f * progress, Space.World);
+            showCard.transform.localEulerAngles = new Vector3(90, 0, 0);
+            showCard.transform.Rotate(Vector3.up, 720f * progress, Space.World);
         });
         await CustomThread.TimerAsync(0.5f, progress =>
         {
-            newCard.transform.localPosition = Vector3.forward * 0.5f * (1 - progress);
-            newCard.transform.localEulerAngles = Vector3.right * 90 * (1 - progress);
+            showCard.transform.localPosition = Vector3.forward * 0.5f * (1 - progress);
+            showCard.transform.localEulerAngles = Vector3.right * 90 * (1 - progress);
         });
+        Destroy(showCard);
     }
 
     internal List<Card> Draw5Cards(List<CardType> cardTypeList)

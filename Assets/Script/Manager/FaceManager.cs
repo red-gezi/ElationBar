@@ -6,13 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 public class FaceManager : OVRLipSyncContextBase
-   
+
 {
     // Start is called before the first frame update
     [Header("人物模型")]
     public SkinnedMeshRenderer skinnedMeshRenderer = null;
-    public Chara currentChara;
-    List<FaceData> FaceDatas { get; set; } = new List<FaceData>();
+    public Chara currentChara=>GetComponent<PlayerManager>().currentPlayerChara;
 
     public bool mute = true;
     public float gain = 1.0f;
@@ -43,19 +42,8 @@ public class FaceManager : OVRLipSyncContextBase
         {
             Smoothing = smoothAmount;
         }
-        AddFaceData();
     }
-    void AddFaceData()
-    {
-        FaceDatas.Add(new(Chara.砂金, 0, new() { 8, 16, 19, 44, 58, 59 }));//喜
-        FaceDatas.Add(new(Chara.砂金, 1, new() { 1, 8, 61 }));//怒
-        FaceDatas.Add(new(Chara.砂金, 2, new() { 7, 56 }));//哀
-        FaceDatas.Add(new(Chara.砂金, 3, new() { 6, 48, 50, 59 }));//惧
-        FaceDatas.Add(new(Chara.黑天鹅, 0, new() { 13, 20, 51 }));//喜
-        FaceDatas.Add(new(Chara.黑天鹅, 1, new() { 0, 1, 24, 37 }));//怒
-        FaceDatas.Add(new(Chara.黑天鹅, 2, new() { 4, 9, 44, 67 }));//哀
-        FaceDatas.Add(new(Chara.黑天鹅, 3, new() { 23, 34, 40 }));//惧
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -111,27 +99,35 @@ public class FaceManager : OVRLipSyncContextBase
     }
     //设置人物表情
     [Button("设置人物表情")]
-    public async void SetFace( int index)
+    public async void SetFace(int index)
     {
         ResetFace();
         Duration = 5;
-        var targetFaceData = FaceDatas
-            .FirstOrDefault(data => data.CurrentChara == currentChara && data.FaceIndex == index);
-        await CustomThread.TimerAsync(0.3f, progress =>
+        var targetFaceDatas = GameData.FaceDatas
+            .Where(data => data.CurrentChara == currentChara).ToList();
+        if (targetFaceDatas.Count > index)
         {
-            for (int i = 0; i < targetFaceData.keyIndex.Count; i++)
+            var targetFaceData = targetFaceDatas[index];
+            await CustomThread.TimerAsync(0.3f, progress =>
             {
-                skinnedMeshRenderer.SetBlendShapeWeight(targetFaceData.keyIndex[i], Mathf.Lerp(0, 100, progress));
-            }
-        });
+                for (int i = 0; i < targetFaceData.KeyIndex.Count; i++)
+                {
+                    skinnedMeshRenderer.SetBlendShapeWeight(targetFaceData.KeyIndex[i], Mathf.Lerp(0, 100, progress));
+                }
+            });
+        }
+        else
+        {
+            Debug.LogWarning("无法找到对应表情数据");
+        }
     }
     [Button("重置表情")]
     async void ResetFace()
     {
         //筛选出所有卡牌涉及到的keyid
-        var targetIndex = FaceDatas
+        var targetIndex = GameData.FaceDatas
               .Where(data => data.CurrentChara == currentChara)
-              .SelectMany(data => data.keyIndex)
+              .SelectMany(data => data.KeyIndex)
               .Distinct()
               .ToList();
         var currentWeight = targetIndex
@@ -146,9 +142,22 @@ public class FaceManager : OVRLipSyncContextBase
         });
     }
     //设置人物台词
-    public void SetWord(Chara chara, int index)
+    public void SetVoice(AudioClip audioClip)
     {
-
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
+    //通过网络同步其他玩家角色说台词
+    public void SetVoice(int id)
+    {
+        var voices = AssetBundleManager
+                .LoadAll<AudioClip>(currentChara.ToString(), "Voice")
+                .Where(voice => voice.name.StartsWith("V"))
+                .ToList();
+        if (id < voices.Count)
+        {
+            SetVoice(voices[id]);
+        }
     }
     //根据语音同步表情
     void OnAudioFilterRead(float[] data, int channels)
@@ -171,20 +180,5 @@ public class FaceManager : OVRLipSyncContextBase
         {
             data = data.Select(x => x * 0.0f).ToArray();
         }
-    }
-}
-class FaceData
-{
-    public Chara CurrentChara { get; set; }
-    public int FaceIndex { get; set; }
-    public Sprite CharaSprite { get; set; }
-    public List<int> keyIndex = new();
-
-    public FaceData(Chara currentChara, int faceIndex, List<int> keyIndex)
-    {
-        CurrentChara = currentChara;
-        FaceIndex = faceIndex;
-        this.keyIndex = keyIndex;
-        //表情立绘从资源包加载
     }
 }

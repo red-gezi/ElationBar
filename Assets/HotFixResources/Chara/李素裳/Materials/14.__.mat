@@ -108,7 +108,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Dissolve: 1
+    - _Dissolve: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeScale: 0.001
@@ -118,7 +118,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.2236068
     - _GlossyReflections: 1
-    - _IsShow: 0
+    - _IsHide: 0
+    - _IsShow: 1
     - _Metallic: 0
     - _Mode: 0
     - _NoShadowCasting: 0
@@ -142,10 +143,11 @@ Material:
     - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _width: 0.002
     m_Colors:
     - _Ambient: {r: 0.752941, g: 0.752941, b: 0.752941, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 31.6268, g: 2.6852894, b: 2.6852894, a: 1}
     - _EdgeColor: {r: 0.45, g: 0.3, b: 0.2, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive: {r: 0, g: 0, b: 0, a: 0}

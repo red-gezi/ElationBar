@@ -1,26 +1,36 @@
+using Sirenix.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using UnityEngine;
 
-public class HandCardManager : MonoBehaviour
+public class CardPosManager : MonoBehaviour
 {
+    #region 左手手牌区
     public List<Card> HandCards { get; set; } = new();
     public List<Card> SelectCards { get; set; } = new();
-    public List<int> SelectCardIndexs => SelectCards.Select(card=>HandCards.IndexOf(card)).ToList();
-    public Transform handPoint;
+    public List<int> SelectCardIndexs => SelectCards.Select(card => HandCards.IndexOf(card)).ToList();
+    public Transform leftHandPoint;
+    [HideInInspector]
     public Card focusCard;
+    [HideInInspector]
     public int focusCardIndex = 0;
+    [HideInInspector]
     public bool IsWaitForPlayCard;
     public float angel;
     public Vector2 rotatePos;
+    [HideInInspector]
     public bool isControlCard = false;
+    #endregion
+    #region 右手出牌区
+    public Transform rightHandPoint;
+    #endregion
+    #region 桌面打出区
+    public Transform cardDeckPoint;
 
-    void Start()
-    {
-       
-    }
+    #endregion
 
     // Update is called once per frame
     void Update()
@@ -80,7 +90,7 @@ public class HandCardManager : MonoBehaviour
     {
         //将卡牌移动到指定位置
 
-        card.transform.parent = handPoint;
+        card.transform.parent = leftHandPoint;
         //加入手牌管理
         HandCards.Add(card.GetComponent<Card>());
         Vector3 startPoint = card.transform.localPosition;
@@ -94,9 +104,27 @@ public class HandCardManager : MonoBehaviour
                 );
         });
     }
-    public void PlayCard(List<int> SelectCardIndexs)
+    public async void PlayCard(List<int> SelectCardIndexs)
     {
         //移除卡牌，刷新位置
+        var cards = SelectCardIndexs.Select(i => HandCards[i]);
+        cards.ForEach(card => HandCards.Remove(card));
+        //卡牌加入到右手牌位置
+        cards.ForEach(card => card.transform.parent = rightHandPoint);
+        await CustomThread.TimerAsync(1, progress =>
+        {
+            cards.ForEach(card => card.transform.localPosition = Vector3.Lerp(card.transform.position, Vector3.zero, 0.1f));
+        });
+        //跟随动画
+        await Task.Delay(1000);
+        //卡牌移动到桌面随机位置
+        await CustomThread.TimerAsync(1, progress =>
+        {
+            cards.ForEach(card => card.transform.localPosition = Vector3.Lerp(card.transform.position, cardDeckPoint.position, 0.1f));
+        });
+        await Task.Delay(1000);
+        //卡牌移动至牌堆
+        cards.ForEach(card=>Destroy(card.gameObject));
     }
     public void RefreshCardPos()
     {
@@ -107,7 +135,7 @@ public class HandCardManager : MonoBehaviour
             var card = HandCards[i];
             card.transform.localPosition = new Vector3(rotatePos.x, rotatePos.y + (card.isSelect ? 0.3f : 0), i * 0.01f);
             card.transform.localEulerAngles = Vector3.zero;
-            card.transform.RotateAround(handPoint.position, handPoint.forward, angel * (i - middleCount));
+            card.transform.RotateAround(leftHandPoint.position, leftHandPoint.forward, angel * (i - middleCount));
             card.RefreshState();
         }
     }

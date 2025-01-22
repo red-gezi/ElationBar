@@ -23,14 +23,14 @@ public class GameManager : GeziBehaviour<GameManager>
     public static int CardPlayHistory { get; set; } = 0;
     //当前客户端玩家座位id
     public static int ClientChairID { get; set; }
-    public static HandCardManager currentPlayerHandCardManager => gameCharas[ClientChairID].handCardManager;
+    public static CardPosManager currentPlayerHandCardManager => gameCharas[ClientChairID].handCardManager;
     public static PlayerManager currentClientPlayer => gameCharas[ClientChairID];
 
     public static bool IsClientPlayer(int playerID) => playerID == ClientChairID;
     public int lastLosePlayerIndex = -1;
     public static string RoomID { get; set; }
     public static string PlayerName { get; set; }
-    public static Chara PlayerChara { get; set; }
+    public static Chara PlayerChara { get; set; } 
     public static List<string> PlayerLocalData { get; set; }
 
     //当前执行选择操作的玩家索引;
@@ -50,9 +50,8 @@ public class GameManager : GeziBehaviour<GameManager>
     async void Start()
     {
         await AssetBundleManager.Init("1", false);
-        UIManager.Instance.InitCharaList();
         //初始化网络
-        await NetCommand.Init();
+        await NetManager.Init();
         //检查热更新
         //登录
         //初始化配置
@@ -60,17 +59,19 @@ public class GameManager : GeziBehaviour<GameManager>
         switch (CurrentPlayMode)
         {
             case PlayerMode.Normal:
-                UIManager.Instance.SwitchCanves(0);
-                await NetCommand.LoginAsync("shajin");
+                UIManager.Instance.SwitchCanves( CanveType.Room);
+                await NetManager.LoginAsync("shajin");
 
                 break;
             case PlayerMode.TestConfig:
-                UIManager.Instance.SwitchCanves(1);
+                
+                UIManager.Instance.SwitchCanves(CanveType.Config);
+                ConfigManager.Instance.SelectModel(Chara.李素裳);
 
                 break;
             case PlayerMode.TestGameLogic:
-                UIManager.Instance.SwitchCanves(2);
-                await NetCommand.GameStartMockAsync();
+                UIManager.Instance.SwitchCanves(CanveType.Game);
+                await NetManager.GameStartMockAsync();
                 break;
             default:
                 break;
@@ -101,7 +102,7 @@ public class GameManager : GeziBehaviour<GameManager>
     }
     public static void SaveLocalUserData()
     {
-        File.WriteAllLines("UserData.ini", PlayerLocalData);
+        //File.WriteAllLines("UserData.ini", PlayerLocalData);
     }
     //#region 客户端向服务端发出指令
     ///////////////////////////////客户端向服务端发出指令/////////////////////////////////////////////////
@@ -195,14 +196,14 @@ public class GameManager : GeziBehaviour<GameManager>
             gameCharas[i].handCardManager.isControlCard = true;
         }
     }
-    internal static async void NotifyWaitForPlayer(int currentPlayerIndex)
+    internal static async void NotifyWaitForPlayer(int currentPlayerIndex, float second)
     {
         Debug.Log($"等待玩家{currentPlayerIndex}操作");
         //转盘旋转
         //如果对象是本客户端玩家，开启倒计时，开启操作选项，开启卡牌焦点
         if (IsClientPlayer(currentPlayerIndex))
         {
-            gameCharas[currentPlayerIndex].WaitPlayerOperation();
+            gameCharas[currentPlayerIndex].WaitPlayerOperation(second);
         }
     }
     internal static void NotifyPlayCard(int currentPlayerIndex, List<int> selectCardIndexs)

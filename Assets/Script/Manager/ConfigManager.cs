@@ -10,8 +10,15 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
 {
     [Header("模板")]
     public GameObject template;
+    private void Start()
+    {
+        foreach (Transform model in transform.GetChild(0))
+        {
+            model.gameObject.SetActive(false);
+        }
+    }
     [Button("生成新人物")]
-    public void CreatModel(GameObject chara)
+    public void CreatModel(GameObject chara, GameObject binFile)
     {
         //关闭所有人物可见性
         foreach (Transform model in transform.GetChild(0))
@@ -75,25 +82,48 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
         //更新模型shader
     }
     [Button("切换当前人物")]
-    public void SelectModel(Chara chara)
+    public async void SelectModel(Chara chara)
     {
-        //旧的缓慢消失
-        //新的渐变生成
-        Transform targetCharaModel=null;
+        //切换的是同个人物，不处理
+        if (GameManager.PlayerChara == chara)
+        {
+            return;
+        }
+        PlayerManager oldModel = GameManager.CurrentConfigChara;
+        PlayerManager newModel=null;
         foreach (Transform model in transform.GetChild(0))
         {
             bool isTarget = model.name == chara.ToString();
-            model.gameObject.SetActive(isTarget);
             if (isTarget)
             {
-                targetCharaModel = model;
+                newModel = model.GetComponent<PlayerManager>();
             }
         }
-        GameManager.CurrentConfigChara = targetCharaModel.GetComponent<PlayerManager>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
 
+        var oldModelMaterials = oldModel?.charaMesh.SelectMany(mesh => mesh.materials).ToList();
+        newModel.gameObject.SetActive(true);
+        GameManager.PlayerChara = chara;
+        GameManager.CurrentConfigChara = newModel.GetComponent<PlayerManager>();
+        GameManager.SaveLocalUserData();
+        await CustomThread.TimerAsync(2, (progress =>
+        {
+            //旧的缓慢消失
+            if (oldModelMaterials!=null)
+            {
+                foreach (var material in oldModelMaterials)
+                {
+                    material.SetInt("_IsHide", 1);
+                    material.SetFloat("_Dissolve", progress);
+                };
+            }
+            //新的渐变生成
+            var newModelMaterials = newModel.charaMesh.SelectMany(mesh => mesh.materials).ToList();
+            foreach (var material in newModelMaterials)
+            {
+                material.SetInt("_IsHide", 0);
+                material.SetFloat("_Dissolve", progress);
+            };
+        }));
+        oldModel?.gameObject.SetActive(false);
     }
 }

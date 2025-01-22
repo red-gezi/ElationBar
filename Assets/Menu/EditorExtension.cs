@@ -60,6 +60,14 @@ namespace Hotfix
         [MenuItem(projectName + "/Scene/切换为对战场景", priority = 153)]
         static void LoaBattleScene() => System.Diagnostics.Process.Start(@"Assets\Scenes\2_Game.unity");
         #endregion
+        /////////////////////////////////////////////////////////////////代码修改///////////////////////////////////////////////////////////////////////////////////////////
+        #region 场景
+        [MenuItem(projectName + "/数据更新/新增人物列表", priority = 251)]
+        static void AddCharaEnum() => System.Diagnostics.Process.Start(@"Assets\Script\Enum\Chara.cs");
+        [MenuItem(projectName + "/数据更新/新增人物表情", priority = 252)]
+        static void AddCharaFace() => System.Diagnostics.Process.Start(@"Assets\Script\Data\GameData.cs");
+
+        #endregion
         /////////////////////////////////////////////////////////////////项目配置///////////////////////////////////////////////////////////////////////////////////////////
         [MenuItem(projectName + "/Config/切换当前程序集使用线上版本（确保debug完要切回来）", priority = 1)]
         static void ChangeToOnlineCardScript()

@@ -223,7 +223,7 @@ public class MicrophoneManager : MonoBehaviour
                         byte[] newAudioData = memoryStream.ToArray();
                         //File.WriteAllBytes("yaya.test",newAudioData);
                         Debug.LogError($"audioData长度为{newAudioData.Count()}");
-                        await NetCommand.SendVoiceToSelf(newAudioData);
+                        await NetManager.SendVoiceToSelf(newAudioData);
                         Debug.Log("数据发送完毕" + (DateTime.Now - now));
                         //AudioClip audioClip = ConvertToAudioClip(newAudioData);
                     }
@@ -234,25 +234,7 @@ public class MicrophoneManager : MonoBehaviour
                 Debug.LogError($"Error processing audio: {ex.Message}");
             }
         }
-        AudioClip ConvertToAudioClip(byte[] data)
-        {
-            int sampleRate = 44100;
-            int channels = 2;
-            int samples = data.Length / (sizeof(short) * channels);
-            AudioClip audioClip = AudioClip.Create("ProcessedAudio", samples, channels, sampleRate, false);
-            audioClip.SetData(ConvertBytesToFloats(data), 0);
-            return audioClip;
-        }
-        float[] ConvertBytesToFloats(byte[] data)
-        {
-            float[] floats = new float[data.Length / sizeof(short)];
-            for (int i = 0; i < floats.Length; i++)
-            {
-                short sample = BitConverter.ToInt16(data, i * sizeof(short));
-                floats[i] = sample / 32768.0f;
-            }
-            return floats;
-        }
+        
     }
     #region 文件保存
 

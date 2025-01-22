@@ -56,4 +56,23 @@ public static class Extension
         result.AddRange(source.Select(selector));
         return result;
     }
+    public static AudioClip ToAudioClip(this byte[] data)
+    {
+        int sampleRate = 44100;
+        int channels = 2;
+        int samples = data.Length / (sizeof(short) * channels);
+        AudioClip audioClip = AudioClip.Create("ProcessedAudio", samples, channels, sampleRate, false);
+        audioClip.SetData(BytesToFloats(data), 0);
+        return audioClip;
+    }
+    public static float[] BytesToFloats(this byte[] data)
+    {
+        float[] floats = new float[data.Length / sizeof(short)];
+        for (int i = 0; i < floats.Length; i++)
+        {
+            short sample = BitConverter.ToInt16(data, i * sizeof(short));
+            floats[i] = sample / 32768.0f;
+        }
+        return floats;
+    }
 }

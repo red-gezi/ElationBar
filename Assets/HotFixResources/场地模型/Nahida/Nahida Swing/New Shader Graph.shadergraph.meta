@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b09b9da5734d35641acee090ec1747fa
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: "\u573A\u5730\u6A21\u578B.gezi"
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

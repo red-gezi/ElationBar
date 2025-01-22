@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public static class NetCommand
+public static class NetManager
 {
     public static bool IsLocal { get; set; } = true;
     static string ip => IsLocal ? "localhost:233" : "106.15.38.165:233";
@@ -24,21 +24,21 @@ public static class NetCommand
                 ServerHub.On<Room>("NotifyJoinRoom", room => GameManager.NotifyJoinRoom(room));
 
                 ServerHub.On<int, List<UserInfo>>("NotifyGameInit", (chairID, playerInfos) => GameManager.NotifyGameInit(chairID, playerInfos));
-                ServerHub.On("NotifyTurnInit",  => GameManager.NotifyTurnInit());
+                ServerHub.On("NotifyTurnInit", () => GameManager.NotifyTurnInit());
                 
                 ServerHub.On<CardType>("NotifyShowTargetCard", cardType => GameManager.NotifyShowTargetCard(cardType));
                 ServerHub.On("NotifyLoadBullet", () => GameManager.NotifyLoadBullet());
                 ServerHub.On<List<CardType>>("NotifyDraw5Cards", cardsType => GameManager.NotifyDraw5Cards(cardsType));
                 ServerHub.On<int, List<int>>("NotifyPlayCard", (currentPlayerIndex, selectCardIndexs) => GameManager.NotifyPlayCard(currentPlayerIndex, selectCardIndexs));
                 ServerHub.On<int>("NotifyQuestion", currentPlayerIndex => GameManager.NotifyQuestion(currentPlayerIndex));
-                ServerHub.On<int>("NotifyWaitForPlayer", currentPlayerIndex => GameManager.NotifyWaitForPlayer(currentPlayerIndex));
+                ServerHub.On<int,float>("NotifyWaitForPlayer", (currentPlayerIndex, second )=> GameManager.NotifyWaitForPlayer(currentPlayerIndex, second));
                 ServerHub.On<int, bool>("NotifyPlayerShot", (currentPlayerIndex, isSurvival) => GameManager.NotifyPlayerShot(currentPlayerIndex, isSurvival));
                 ServerHub.On<int>("NotifyPlayerWin", currentPlayerIndex => GameManager.NotifyPlayerWin(currentPlayerIndex));
                 ServerHub.On("NotifyPlayerAgain", () => GameManager.NotifyPlayerAgain());
                 //向当前正在校准的角色发送语音
-                ServerHub.On<float[]>("ReceiveVoiceToSelf", (x) => Debug.Log($"{DateTime.Now}接收完成3，时间间隔为{DateTime.Now - now}"));
+                ServerHub.On<byte[]>("ReceiveVoiceToSelf", (x) => Debug.Log($"{DateTime.Now}接收完成3，时间间隔为{DateTime.Now - now}"));
                 //向指定座位的角色发送语音
-                ServerHub.On<int, float[]>("ReceiveVoiceToPlayer", (id, x) => Debug.Log($"{DateTime.Now}接收完成3，时间间隔为{DateTime.Now - now}"));
+                ServerHub.On<int, byte[]>("ReceiveVoiceToPlayer", (id, x) => Debug.Log($"{DateTime.Now}接收完成3，时间间隔为{DateTime.Now - now}"));
             }
             else
             {
