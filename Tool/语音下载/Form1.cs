@@ -16,7 +16,9 @@ namespace 语音下载
         }
         private void Btn_OpenWeb_Click(object sender, EventArgs e)
         {
-            Process.Start("https://bbs.mihoyo.com/sr/wiki/channel/map/17/18?bbs_presentation_style=no_header");
+            string url = "https://bbs.mihoyo.com/sr/wiki/channel/map/17/18?bbs_presentation_style=no_header";
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+            //Process.Start("https://bbs.mihoyo.com/sr/wiki/channel/map/17/18?bbs_presentation_style=no_header");
         }
         private void Btn_Filiter_Click(object sender, EventArgs e)
         {

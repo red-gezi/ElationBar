@@ -51,7 +51,7 @@ public class GameManager : GeziBehaviour<GameManager>
     {
         await AssetBundleManager.Init("1", false);
         //初始化网络
-        await NetManager.Init();
+        _= NetManager.Init();
         //检查热更新
         //登录
         //初始化配置
@@ -66,7 +66,8 @@ public class GameManager : GeziBehaviour<GameManager>
             case PlayerMode.TestConfig:
                 
                 UIManager.Instance.SwitchCanves(CanveType.Config);
-                ConfigManager.Instance.SelectModel(Chara.李素裳);
+                ConfigManager.Instance.SelectModel(Chara.砂金);
+                CurrentConfigChara.Init();
 
                 break;
             case PlayerMode.TestGameLogic:

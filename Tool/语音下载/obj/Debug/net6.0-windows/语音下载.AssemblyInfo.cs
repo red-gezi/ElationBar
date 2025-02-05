@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("语音下载")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dba1ec376506b18ef064096cb33a22c92a442291")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8a93851a4ef78972e792969f5754daab1c94d53")]
 [assembly: System.Reflection.AssemblyProductAttribute("语音下载")]
 [assembly: System.Reflection.AssemblyTitleAttribute("语音下载")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

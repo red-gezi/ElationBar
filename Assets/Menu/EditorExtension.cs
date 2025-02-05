@@ -44,6 +44,8 @@ namespace Hotfix
         static void OpenClient() => System.Diagnostics.Process.Start(@"Pc\TouHouMachineLearningSummary.exe");
         [MenuItem(projectName + "/打开/打开配置文件", false, 2)]
         static void OpenConfig() => System.Diagnostics.Process.Start(@"Assets\Resources\HotFix.txt");
+        
+        
         //[MenuItem(projectName + "/打开/打开数据表格（云端）", false, 50)]
         //static void OpenCloudXls() => System.Diagnostics.Process.Start(@"https://kdocs.cn/l/cfS6F51QxqGd");
         //[MenuItem(projectName + "/打开/打开数据表格", false, 51)]
@@ -60,13 +62,19 @@ namespace Hotfix
         [MenuItem(projectName + "/Scene/切换为对战场景", priority = 153)]
         static void LoaBattleScene() => System.Diagnostics.Process.Start(@"Assets\Scenes\2_Game.unity");
         #endregion
-        /////////////////////////////////////////////////////////////////代码修改///////////////////////////////////////////////////////////////////////////////////////////
-        #region 场景
-        [MenuItem(projectName + "/数据更新/新增人物列表", priority = 251)]
+        /////////////////////////////////////////////////////////////////人物新增///////////////////////////////////////////////////////////////////////////////////////////
+        #region 人物新增
+        [MenuItem(projectName + "/人物新增/新增人物列表", priority = 10)]
         static void AddCharaEnum() => System.Diagnostics.Process.Start(@"Assets\Script\Enum\Chara.cs");
-        [MenuItem(projectName + "/数据更新/新增人物表情", priority = 252)]
-        static void AddCharaFace() => System.Diagnostics.Process.Start(@"Assets\Script\Data\GameData.cs");
+        [MenuItem(projectName + "/人物新增/模型下载", priority = 11)]
+        static void DownloadChara() => System.Diagnostics.Process.Start(@"https://www.aplaybox.com/u/516827875/model");
+        [MenuItem(projectName + "/人物新增/语音下载", priority = 12)]
+        static void OpenVoiceTools() => System.Diagnostics.Process.Start(@"Tool\语音下载\bin\Debug\net6.0-windows\语音下载.exe");
 
+        [MenuItem(projectName + "/人物新增/配置表情数据", priority = 13)]
+        static void ConfigFaceData() => System.Diagnostics.Process.Start(@"Assets\Script\Data\GameData.cs");
+        [MenuItem(projectName + "/人物新增/配置动作数据", priority = 14)]
+        static void ConfigMotionData() => System.Diagnostics.Process.Start(@"Assets\Script\Data\GameData.cs");
         #endregion
         /////////////////////////////////////////////////////////////////项目配置///////////////////////////////////////////////////////////////////////////////////////////
         [MenuItem(projectName + "/Config/切换当前程序集使用线上版本（确保debug完要切回来）", priority = 1)]

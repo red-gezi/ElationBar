@@ -16,5 +16,6 @@ public class GameData : GeziBehaviour<GameData>
        new(Chara.黑天鹅, new() { 0, 1, 24, 37}),
        new(Chara.黑天鹅, new() { 4, 9, 44, 67 }),
        new(Chara.黑天鹅, new() { 23, 34, 40 }),
+
     };
 }

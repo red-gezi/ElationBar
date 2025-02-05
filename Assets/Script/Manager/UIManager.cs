@@ -1,11 +1,8 @@
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting.YamlDotNet.Core;
 using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : GeziBehaviour<UIManager>
@@ -25,6 +22,7 @@ public class UIManager : GeziBehaviour<UIManager>
 
     public GameObject charaSelectListUI;
     public Text playerName;
+    public Transform actionListOnConfig;
     public Transform faceListOnConfig;
     public Transform voiceListOnConfig;
     public Transform voiceContentOnConfig;
@@ -39,41 +37,6 @@ public class UIManager : GeziBehaviour<UIManager>
 
     [Header("音量")]
     public Image microphoneImage;
-    private void Start()
-    {
-
-    }
-    //键盘按键触发
-    //private void Update()
-    //{
-    //    switch (CurrentCanveType)
-    //    {
-    //        case CanveType.Room: break;
-    //        case CanveType.Config:
-    //            {
-    //                if (IsActionListOpenOnConfig)
-    //                {
-
-    //                }
-    //                if (IsFaceListOpenOnConfig)
-    //                {
-    //                    for (int i = 0; i < 4; i++)
-    //                    {
-    //                        if (Input.GetKeyDown(KeyCode.Alpha1+i)) Instance.SelectCharaFaceListOnConfig(i);
-    //                    }
-    //                }
-    //                if (IsVoiceListOpenOnConfig)
-    //                {
-    //                    for (int i = 0; i<9;i++)
-    //                    {
-    //                        if (Input.GetKeyDown(KeyCode.Alpha1+i)) Instance.SelectCharaVoiceListOnConfig(i);
-    //                    }
-    //                }
-    //                break;
-    //            }
-    //        case CanveType.Game: break;
-    //    }
-    //}
     #region 切换ui界面
     [Button("切换ui界面")]
     public void SwitchCanves(CanveType canveType)
@@ -182,36 +145,78 @@ public class UIManager : GeziBehaviour<UIManager>
     public void SetPlayerName(string name)
     {
 
-       
+
         GameManager.SaveLocalUserData();
     }
     //调整音量ui语音选项
 
-    bool IsFaceListOpenOnConfig;
+    //bool IsFaceListOpenOnConfig;
     bool IsVoiceListOpenOnConfig;
     bool IsActionListOpenOnConfig;
     //初始化界面，关闭所有
     public async void InitConfigUI()
     {
+        await CloseCharaActionListOnConfig();
         await CloseCharaFaceListOnConfig();
-        CloseCharaVoiceListOnConfig();
-        CloseCharaActionList();
+        await CloseCharaVoiceListOnConfig();
+    }
+    //展开角色动作列表
+    public async void OpenCharaActionListOnConfig()
+    {
+        var IsActionListOpen = actionListOnConfig.gameObject.activeSelf;
+        //关掉其他选项子菜单
+        InitConfigUI();
+        //如果表情子菜单之前未展开，则展开
+        if (!IsActionListOpen)
+        {
+            actionListOnConfig.gameObject.SetActive(true);
+            await CustomThread.TimerAsync(0.3f, progress =>
+            {
+                actionListOnConfig.GetComponent<RectTransform>().anchoredPosition = new(1400 + ((1 - progress) * 10), -600);
+                actionListOnConfig.GetComponent<CanvasGroup>().alpha = progress;
+            });
+            //IsFaceListOpenOnConfig = true;
+        }
+    }
+    public async void SelectCharaActionListOnConfig(int index)
+    {
+        //选择指定表情
+        _ = GameManager.CurrentConfigChara.SetActionAsync(index);
+        await CloseCharaActionListOnConfig();
+    }
+    //关闭角色表情列表
+    public async Task CloseCharaActionListOnConfig()
+    {
+        //if (IsFaceListOpenOnConfig)
+        if (actionListOnConfig.gameObject.activeSelf)
+        {
+            //隐藏四个按钮
+            await CustomThread.TimerAsync(0.3f, progress =>
+            {
+                actionListOnConfig.GetComponent<RectTransform>().anchoredPosition = new Vector2(1400 + (progress * 10), -600);
+                actionListOnConfig.GetComponent<CanvasGroup>().alpha = 1 - progress;
+            });
+            //IsFaceListOpenOnConfig = false;
+            actionListOnConfig.gameObject.SetActive(false);
+        }
     }
     //展开角色表情列表
     public async void OpenCharaFaceListOnConfig()
     {
-        var IsFaceListOpen = IsFaceListOpenOnConfig;
+        //var IsFaceListOpen = IsFaceListOpenOnConfig;
+        var IsFaceListOpen = faceListOnConfig.gameObject.activeSelf;
         //关掉其他选项子菜单
         InitConfigUI();
         //如果表情子菜单之前未展开，则展开
         if (!IsFaceListOpen)
         {
+            faceListOnConfig.gameObject.SetActive(true);
             await CustomThread.TimerAsync(0.3f, progress =>
             {
                 faceListOnConfig.GetComponent<RectTransform>().anchoredPosition = new(1400 + ((1 - progress) * 10), -600);
                 faceListOnConfig.GetComponent<CanvasGroup>().alpha = progress;
             });
-            IsFaceListOpenOnConfig = true;
+            //IsFaceListOpenOnConfig = true;
         }
     }
     public async void SelectCharaFaceListOnConfig(int index)
@@ -223,7 +228,8 @@ public class UIManager : GeziBehaviour<UIManager>
     //关闭角色表情列表
     public async Task CloseCharaFaceListOnConfig()
     {
-        if (IsFaceListOpenOnConfig)
+        //if (IsFaceListOpenOnConfig)
+        if (faceListOnConfig.gameObject.activeSelf)
         {
             //隐藏四个按钮
             await CustomThread.TimerAsync(0.3f, progress =>
@@ -231,12 +237,13 @@ public class UIManager : GeziBehaviour<UIManager>
                 faceListOnConfig.GetComponent<RectTransform>().anchoredPosition = new Vector2(1400 + (progress * 10), -600);
                 faceListOnConfig.GetComponent<CanvasGroup>().alpha = 1 - progress;
             });
-            IsFaceListOpenOnConfig = false;
+            //IsFaceListOpenOnConfig = false;
+            faceListOnConfig.gameObject.SetActive(false);
         }
     }
     //展开角色语音列表
     [Button("展开角色语音列表")]
-    public async Task OpenCharaVoiceLisOntConfig()
+    public async void OpenCharaVoiceLisOntConfig()
     {
         var IsVoiceListOpen = IsVoiceListOpenOnConfig;
         //关掉其他选项子菜单
@@ -244,6 +251,7 @@ public class UIManager : GeziBehaviour<UIManager>
         //如果表情子菜单之前未展开，则展开
         if (!IsVoiceListOpen)
         {
+            voiceListOnConfig.gameObject.SetActive(true);
             //加载指定角色的语音
             string charaTag = GameManager.CurrentConfigChara.currentPlayerChara.ToString();
             var voices = AssetBundleManager
@@ -265,11 +273,13 @@ public class UIManager : GeziBehaviour<UIManager>
             //初始化指定数量选项
             for (int i = 0; i < voices.Count; i++)
             {
+                int rank = i;
                 Transform voiceItem = voiceContentOnConfig.GetChild(i);
                 voiceItem.gameObject.SetActive(true);
                 voiceItem.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1) + ":" + voices[i].name[2..];
                 voiceItem.GetComponent<Button>().onClick.RemoveAllListeners();
-                voiceItem.GetComponent<Button>().onClick.AddListener(() => SelectCharaVoiceListOnConfig(i));
+                voiceItem.GetComponent<Button>().onClick.AddListener(() => SelectCharaVoiceListOnConfig(rank));
+                voiceItem.GetComponent<KeyBoardManager>().keyCode = KeyCode.Alpha1 + i;
             }
 
             //根据加载项调整ui数量和横坐标
@@ -284,14 +294,18 @@ public class UIManager : GeziBehaviour<UIManager>
     public async void SelectCharaVoiceListOnConfig(int id)
     {
         //选择指定语音
-        //GameManager.CurrentConfigChara.faceManager.SetVoice(audioClip);
         GameManager.CurrentConfigChara.faceManager.SetVoice(id);
         await CloseCharaVoiceListOnConfig();
     }
     //关闭角色语音列表
     public Task CloseCharaVoiceListOnConfig()
     {
-        return null;
+        if (IsVoiceListOpenOnConfig)
+        {
+            voiceListOnConfig.gameObject.SetActive(false);
+            IsVoiceListOpenOnConfig = false;
+        }
+        return Task.Delay(1000);
     }
     //展开角色动作列表
     public void OpenCharaActionList()
