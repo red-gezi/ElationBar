@@ -1,8 +1,7 @@
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,7 +17,7 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
         }
     }
     [Button("生成新人物")]
-    public void CreatModel(GameObject chara, TextAsset modelFile,BodyType bodyType)
+    public void CreatModel(GameObject chara, BodyType bodyType)
     {
         //关闭所有人物可见性
         foreach (Transform model in transform.GetChild(0))
@@ -42,22 +41,36 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
         Debug.LogWarning($"开始配置头部IK");
         var ikManager = newChara.AddComponent<IKManager>();
         ikManager.target = playerManager.focusPoint.transform;
-        Debug.LogWarning($"开始配置模型物理");
+        //装配MMD组件
         var mmdModel = newChara.AddComponent<MMD4MecanimModelImpl>();
-        mmdModel.modelFile= modelFile;
+        Debug.LogWarning($"开始配置模型物理");
+        string directory = System.IO.Path.GetDirectoryName(AssetDatabase.GetAssetPath(chara));
+        string modelAssetPath = System.IO.Path.Combine(directory, chara.name + ".model.bytes");
+        mmdModel.modelFile = AssetDatabase.LoadAssetAtPath<TextAsset>(modelAssetPath);
+        Debug.Log("模型文件载入" + (mmdModel.modelFile ? "成功" : "失败"));
         mmdModel.physicsEngine = MMD4MecanimModelImpl.PhysicsEngine.BulletPhysics;
+        //校准头部和双手关键点位置
+        var modelHeadPoint = mmdModel.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.name.Contains("joint_Head"))?.gameObject;
+        var modelLeftHandPoint = mmdModel.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.name.Contains("joint_LeftWrist"))?.gameObject;
+        var modelRightHandPoint = mmdModel.GetComponentsInChildren<Transform>().FirstOrDefault(child => child.name.Contains("joint_RightWrist"))?.gameObject;
+        newModel.GetComponent<CalibrationManager>().modelHeadPoint = modelHeadPoint;
+        newModel.GetComponent<CalibrationManager>().modelLeftHandPoint = modelLeftHandPoint;
+        newModel.GetComponent<CalibrationManager>().modelRightHandPoint = modelRightHandPoint;
+        if (modelHeadPoint == null) Debug.LogWarning("警告：头部点位未找到");
+        if (modelLeftHandPoint == null) Debug.LogWarning("警告：左手点位未找到");
+        if (modelRightHandPoint == null) Debug.LogWarning("警告：右手点位未找到");
         //配置语音
         Debug.LogWarning($"开始配置口型");
         //循环遍历模型，获取面部参数和材质球
-        FindComponentInChild(newModel, newChara.transform, playerManager);
+        FindComponentInChild(newChara, newChara.transform, playerManager);
         if (ikManager != null)
             DestroyImmediate(oldChara);
 
-        static void FindComponentInChild(GameObject currentModel, Transform currentTransform, PlayerManager playerManager)
+        static void FindComponentInChild(GameObject currentChara, Transform currentTransform, PlayerManager playerManager)
         {
             foreach (Transform item in currentTransform)
             {
-                if (item.TryGetComponent(out SkinnedMeshRenderer renderer)  )
+                if (item.TryGetComponent(out SkinnedMeshRenderer renderer))
                 {
                     playerManager.charaMesh.Add(renderer);
                     //包含面部参数
@@ -71,7 +84,7 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
                         var i = keys.IndexOf(keys.Where(key => key.Contains("い")).OrderBy(key => key.Length).FirstOrDefault());
                         var o = keys.IndexOf(keys.Where(key => key.Contains("お")).OrderBy(key => key.Length).FirstOrDefault());
                         var u = keys.IndexOf(keys.Where(key => key.Contains("う")).OrderBy(key => key.Length).FirstOrDefault());
-                        FaceManager faceManager = currentModel.GetComponent<FaceManager>();
+                        FaceManager faceManager = currentChara.GetComponent<FaceManager>();
                         faceManager.skinnedMeshRenderer = renderer;
                         faceManager.a = a;
                         faceManager.e = e;
@@ -83,7 +96,7 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
                 }
                 else
                 {
-                    FindComponentInChild(currentModel, item, playerManager);
+                    FindComponentInChild(currentChara, item, playerManager);
                 }
             }
         }
@@ -98,7 +111,7 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
             return;
         }
         PlayerManager oldModel = GameManager.CurrentConfigChara;
-        PlayerManager newModel=null;
+        PlayerManager newModel = null;
         foreach (Transform model in transform.GetChild(0))
         {
             bool isTarget = model.name == chara.ToString();
@@ -116,7 +129,7 @@ public class ConfigManager : GeziBehaviour<ConfigManager>
         await CustomThread.TimerAsync(2, (progress =>
         {
             //旧的缓慢消失
-            if (oldModelMaterials!=null)
+            if (oldModelMaterials != null)
             {
                 foreach (var material in oldModelMaterials)
                 {

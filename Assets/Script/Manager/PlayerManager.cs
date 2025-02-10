@@ -1,12 +1,15 @@
-﻿using Sirenix.OdinInspector;
+﻿using Cinemachine;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEditor.Animations;
 using UnityEditorInternal;
 using UnityEngine;
 //玩家角色管理器
+[SaveDuringPlay]
 public class PlayerManager : MonoBehaviour
 {
     ////////////////////////注视点位置/////////////////////////
@@ -51,7 +54,6 @@ public class PlayerManager : MonoBehaviour
     public CardPosManager handCardManager => GetComponent<CardPosManager>();
     public FaceManager faceManager => GetComponent<FaceManager>();
     public Animator animator => transform.GetChild(0).GetComponent<Animator>();
-    public RuntimeAnimatorController animatorController;
     //角色初始化
     [Button("初始化")]
     public void Init()
@@ -100,12 +102,7 @@ public class PlayerManager : MonoBehaviour
         await Task.Delay((int)(targetClip.length * 1000));
         Debug.Log("播放完成");
     }
-    [Header("校准")]
     
-    public Vector3 LeftHandPointPos;
-    public Vector3 LeftHandPointEula;
-    [Button("校准")]
-
 
     private void Update()
     {

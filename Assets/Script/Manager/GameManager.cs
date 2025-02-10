@@ -51,7 +51,7 @@ public class GameManager : GeziBehaviour<GameManager>
     {
         await AssetBundleManager.Init("1", false);
         //初始化网络
-        _= NetManager.Init();
+        await NetManager.Init();
         //检查热更新
         //登录
         //初始化配置
@@ -157,9 +157,7 @@ public class GameManager : GeziBehaviour<GameManager>
         }
         //给玩家角色加装摄像头
         await Task.Delay(5000);
-        CameraManager.Instance.target = gameCharas[ClientChairID].focusPoint;
-        Instance.gameCamera.transform.position = gameCharas[ClientChairID].head.transform.position;
-        Instance.gameCamera.transform.eulerAngles = gameCharas[ClientChairID].head.transform.eulerAngles;
+        CameraManager.SetPlayerView(gameCharas[ClientChairID]);
     }
     internal static void NotifyTurnInit()
     {

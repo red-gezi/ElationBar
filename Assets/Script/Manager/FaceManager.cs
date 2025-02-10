@@ -84,19 +84,20 @@ public class FaceManager : OVRLipSyncContextBase
         }
         Debug.Log(blendShadpeNames.ToJson());
     }
-    //[Button("打印当前表情索引")]
-    //public void ShowCurrentFaceID()
-    //{
-    //    List<int> blendShadpeID = new();
-    //    for (int i = 0; i < skinnedMeshRenderer.sharedMesh.blendShapeCount; i++)
-    //    {
-    //        if (skinnedMeshRenderer.GetBlendShapeWeight(i) != 0)
-    //        {
-    //            blendShadpeID.Add(i);
-    //        }
-    //    }
-    //    Debug.Log(blendShadpeID.ToJson(Newtonsoft.Json.Formatting.None));
-    //}
+    [Button("打印当前表情索引")]
+    public void ShowCurrentFaceID()
+    {
+        List<int> blendShadpeID = new();
+        for (int i = 0; i < skinnedMeshRenderer.sharedMesh.blendShapeCount; i++)
+        {
+            if (skinnedMeshRenderer.GetBlendShapeWeight(i) != 0)
+            {
+                blendShadpeID.Add(i);
+            }
+        }
+        string log = $"new(Chara.{transform.parent.name}, new() {{" + string.Join(", ", blendShadpeID) + "}}),";
+        Debug.Log(log);
+    }
     //设置人物表情
     [Button("设置人物表情")]
     public async void SetFace(int index)

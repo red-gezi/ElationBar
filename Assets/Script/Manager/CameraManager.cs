@@ -13,7 +13,7 @@ public class CameraManager : GeziBehaviour<CameraManager>
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftAlt)|| Input.GetKey(KeyCode.RightAlt))
+        if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
         {
             return;
         }
@@ -29,13 +29,18 @@ public class CameraManager : GeziBehaviour<CameraManager>
 
         // 应用垂直旋转
         camera.transform.localEulerAngles = new Vector3(verticalRotation, camera.transform.localEulerAngles.y, 0);
-        if (target != null )
+        //设置注视点位置
+        if (target != null)
         {
             target.transform.position = camera.transform.position + camera.transform.forward * 3;
         }
+        //设置摄像机位置
     }
-    public void SetPlayerView(GameObject chara )
+    public static void SetPlayerView(PlayerManager player)
     {
-        target=chara.transform.GetChild(0).gameObject;
+        //target=chara.transform.GetChild(0).gameObject;
+        Instance.target = player.focusPoint;
+        Instance.camera.transform.position = player.head.transform.position;
+        Instance.camera.transform.eulerAngles = player.head.transform.eulerAngles;
     }
 }

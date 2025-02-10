@@ -17,7 +17,6 @@ public static class NetManager
         {
             if (ServerHub == null)
             {
-                //ServerHub = new HubConnectionBuilder().WithUrl($"http://{ip}/GameHub").Build();
                 ServerHub = new HubConnection(new Uri($"http://{ip}/GameHub"), new JsonProtocol(new LitJsonEncoder()));
                 await ServerHub.ConnectAsync();
                 //await ServerHub.StartAsync();
