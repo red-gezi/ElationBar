@@ -8,7 +8,7 @@ public class AnimationManager : GeziBehaviour<AnimationManager>
 {
 
     public List<AnimatorData> charaActon;
-    public static AnimationClip GetAnimationClip(ActionType actionType)
+    public static AnimationClip GetAnimationClip(ActionSubType actionType)
     {
         var clip = Instance.charaActon.FirstOrDefault(action => action.actionType == actionType);
         if (clip == null)
@@ -20,9 +20,9 @@ public class AnimationManager : GeziBehaviour<AnimationManager>
     [Button("刷新动画条目")]
     public void RefreshItem()
     {
-        var allActionTypes = System.Enum.GetValues(typeof(ActionType));
+        var allActionTypes = System.Enum.GetValues(typeof(ActionSubType));
         List<AnimatorData> tempList = new List<AnimatorData>();
-        foreach (ActionType action in allActionTypes)
+        foreach (ActionSubType action in allActionTypes)
         {
             if (!charaActon.Exists(item => item.actionType == action))
             {

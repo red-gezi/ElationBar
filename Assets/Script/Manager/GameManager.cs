@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -13,25 +11,24 @@ public class GameManager : GeziBehaviour<GameManager>
     public GameObject charaRoot;
     public GameObject playerGroup;
 
-    public bool IsConfigMode { get; set; } = !true;
-    public static PlayerManager CurrentConfigChara { get; set; } = null;
+    public static bool IsConfigMode { get; set; } = true;
+    public static CharaManager CurrentConfigChara { get; set; } = null;
     public List<Transform> playerChair;
-    public static List<PlayerManager> gameCharas = new();
+    public static List<CharaManager> gameCharas = new();
     //public HandCardManager handCardManager;
     public Dictionary<string, GameObject> charaModels = new();
     //出牌历史记录
     public static int CardPlayHistory { get; set; } = 0;
     //当前客户端玩家座位id
     public static int ClientChairID { get; set; }
-    public static CardPosManager currentPlayerHandCardManager => gameCharas[ClientChairID].handCardManager;
-    public static PlayerManager currentClientPlayer => gameCharas[ClientChairID];
+    public static CardPosManager currentPlayerHandCardManager => gameCharas[ClientChairID].cardPosManager;
+    public static CharaManager currentClientPlayer => gameCharas[ClientChairID];
 
     public static bool IsClientPlayer(int playerID) => playerID == ClientChairID;
     public int lastLosePlayerIndex = -1;
     public static string RoomID { get; set; }
     public static string PlayerName { get; set; }
-    public static Chara PlayerChara { get; set; } 
-    public static List<string> PlayerLocalData { get; set; }
+    public static Chara PlayerChara { get; set; }
 
     //当前执行选择操作的玩家索引;
     int currentPlayerIndex;
@@ -50,27 +47,30 @@ public class GameManager : GeziBehaviour<GameManager>
     async void Start()
     {
         await AssetBundleManager.Init("1", false);
-        //初始化网络
-        await NetManager.Init();
+
         //检查热更新
         //登录
         //初始化配置
-        Init();
+        GameInit();
         switch (CurrentPlayMode)
         {
             case PlayerMode.Normal:
-                UIManager.Instance.SwitchCanves( CanveType.Room);
+                //初始化网络
+                await NetManager.Init();
+                UIManager.Instance.SwitchCanves(CanveType.Room);
                 await NetManager.LoginAsync("shajin");
 
                 break;
             case PlayerMode.TestConfig:
-                
+
                 UIManager.Instance.SwitchCanves(CanveType.Config);
-                ConfigManager.Instance.SelectModel(Chara.砂金);
+                CharaConfigManager.Instance.SelectModel(Chara.砂金);
                 CurrentConfigChara.Init();
 
                 break;
             case PlayerMode.TestGameLogic:
+                //初始化网络
+                await NetManager.Init();
                 UIManager.Instance.SwitchCanves(CanveType.Game);
                 await NetManager.GameStartMockAsync();
                 break;
@@ -78,33 +78,18 @@ public class GameManager : GeziBehaviour<GameManager>
                 break;
         }
     }
-    private void Update()
-    {
-
-    }
-    public void Init()
+    public void GameInit()
     {
         gameCharas.Clear();
         CardPlayHistory = 0;
-        LoadLocalUserData();
+        ConfigManager.LoadLocalUserData();
         foreach (Transform chara in charaRoot.transform)
         {
             charaModels[chara.name] = chara.gameObject;
         }
     }
     private void OnApplicationQuit() => IsQuit = true;
-    public static void LoadLocalUserData()
-    {
-        if (!File.Exists("UserData.ini"))
-        {
-            File.WriteAllLines("UserData.ini", new string[] {"0","测试者",((int)Chara.砂金).ToString()});
-        }
-        PlayerLocalData = File.ReadAllLines("UserData.ini").ToList();
-    }
-    public static void SaveLocalUserData()
-    {
-        //File.WriteAllLines("UserData.ini", PlayerLocalData);
-    }
+
     //#region 客户端向服务端发出指令
     ///////////////////////////////客户端向服务端发出指令/////////////////////////////////////////////////
     //public void PlayerPlayCard()
@@ -146,7 +131,7 @@ public class GameManager : GeziBehaviour<GameManager>
             newChara.SetActive(true);
             newChara.transform.localPosition = Vector3.up;
             newChara.transform.localEulerAngles = new Vector3(0, 0, 0);
-            PlayerManager newPlayer = newChara.GetComponent<PlayerManager>();
+            CharaManager newPlayer = newChara.GetComponent<CharaManager>();
             newPlayer.Init();
             gameCharas.Add(newPlayer);
             //var player = players[chairID];
@@ -181,18 +166,9 @@ public class GameManager : GeziBehaviour<GameManager>
 
         for (int i = 0; i < gameCharas.Count; i++)
         {
-            gameCharas[i].handCardManager.angel = 15;
             //如果是玩家本人抽牌，则为通知的牌，不然是空牌
-            //每个牌堆生成5张牌
-            var newCards = CardDeckManager.Instance.Draw5Cards(IsClientPlayer(i) ? cardsType : new() { CardType.N, CardType.N, CardType.N, CardType.N, CardType.N });
-            for (int j = 0; j < newCards.Count; j++)
-            {
-                gameCharas[i].handCardManager.DrawCard(newCards[j]);
-                await Task.Delay(100);
-            }
-            //移动至玩家手上，展开
+            gameCharas[i].cardPosManager.DrawCards(IsClientPlayer(i) ? cardsType : new() { CardType.N, CardType.N, CardType.N, CardType.N, CardType.N });
             await Task.Delay(500);
-            gameCharas[i].handCardManager.isControlCard = true;
         }
     }
     internal static async void NotifyWaitForPlayer(int currentPlayerIndex, float second)
@@ -211,7 +187,7 @@ public class GameManager : GeziBehaviour<GameManager>
         CardPlayHistory = selectCardIndexs.Count;
         UIManager.Instance.RefreshPlayCardHistory(selectCardIndexs.Count);
         //客户端播放卡牌打出动画
-        gameCharas[currentPlayerIndex].handCardManager.PlayCard(selectCardIndexs);
+        gameCharas[currentPlayerIndex].cardPosManager.PlayCard(selectCardIndexs);
         //如果对象是本客户端玩家，开启倒计时，开启操作选项，开启卡牌焦点
         if (IsClientPlayer(currentPlayerIndex))
         {
@@ -235,6 +211,8 @@ public class GameManager : GeziBehaviour<GameManager>
     {
         //切换摄像机视角，摆胜利pose
         Debug.Log($"玩家{currentPlayerIndex}胜利");
+        //通知对应玩家胜利
+        //显示pose
     }
 
     internal static void NotifyPlayerShot(int currentPlayerIndex, bool isSurvival)
@@ -267,6 +245,6 @@ public class GameManager : GeziBehaviour<GameManager>
         //询问玩家是否开始下一局匹配
     }
 
-    
+
     #endregion
 }

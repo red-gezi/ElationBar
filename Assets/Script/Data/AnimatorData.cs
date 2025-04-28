@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public  class AnimatorData
 {
-    public ActionType actionType;
+    public ActionSubType actionType;
     public AnimationClip animation;
     public float weight;
 }

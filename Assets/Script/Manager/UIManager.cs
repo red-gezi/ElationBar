@@ -139,14 +139,12 @@ public class UIManager : GeziBehaviour<UIManager>
     public void SetCurrentChara(Chara chara)
     {
         Debug.Log("按钮点击" + chara.ToString());
-        ConfigManager.Instance.SelectModel(chara);
+        CharaConfigManager.Instance.SelectModel(chara);
         CloseCharaSelectList();
     }
     public void SetPlayerName(string name)
     {
-
-
-        GameManager.SaveLocalUserData();
+        ConfigManager.SetConfigData(data => data.PlayerName, name);
     }
     //调整音量ui语音选项
 
@@ -371,7 +369,7 @@ public class UIManager : GeziBehaviour<UIManager>
     }
     public void PlayerCard()
     {
-        if (!GameManager.currentClientPlayer.handCardManager.SelectCards.Any())
+        if (!GameManager.currentClientPlayer.cardPosManager.SelectCards.Any())
         {
             //弹窗提示至少选择一张牌
             Debug.Log("未选择卡牌，无法打出");
@@ -379,7 +377,7 @@ public class UIManager : GeziBehaviour<UIManager>
         else
         {
             Debug.Log("卡牌打出，无法质疑");
-            NetManager.PlayCard(GameManager.currentClientPlayer.handCardManager.SelectCards);
+            NetManager.PlayCard(GameManager.currentClientPlayer.cardPosManager.SelectCards);
         }
     }
     public void QuestionCard()

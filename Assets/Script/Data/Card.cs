@@ -8,8 +8,9 @@ public class Card : MonoBehaviour
     GameObject model => gameObject;
     //当前位于手牌列表
     public CardType CurrentCardType {  get;  set; }
-    public bool isFocus => GameManager.currentClientPlayer.handCardManager.focusCard == this;
-    public bool isSelect => GameManager.currentClientPlayer.handCardManager.SelectCards.Contains(this);
+    //处于配置人物演示时无法注释和选择卡牌
+    public bool isFocus => GameManager.IsConfigMode ? false : GameManager.currentClientPlayer.cardPosManager.focusCard == this;
+    public bool isSelect =>GameManager.IsConfigMode?false: GameManager.currentClientPlayer.cardPosManager.SelectCards.Contains(this);
     public void RefreshState()
     {
 

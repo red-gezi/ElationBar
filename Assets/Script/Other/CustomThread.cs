@@ -38,4 +38,19 @@ public class CustomThread : MonoBehaviour
         }
         //Debug.Log("结束打印"+( time - DateTime.Now));
     }
+    public static async Task DelayRun(float delayTime, Action runAction = null)
+    {
+        int currentMs = 0;
+        int delayMs = (int)(delayTime * 1000);
+        while (true)
+        {
+            if (currentMs > delayMs)
+            {
+                runAction();
+                break;
+            }
+            currentMs += 50;
+            await Task.Delay(50);
+        }
+    }
 }

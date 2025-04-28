@@ -36,10 +36,10 @@ public class CameraManager : GeziBehaviour<CameraManager>
         }
         //…Ë÷√…„œÒª˙Œª÷√
     }
-    public static void SetPlayerView(PlayerManager player)
+    public static void SetPlayerView(CharaManager player)
     {
         //target=chara.transform.GetChild(0).gameObject;
-        Instance.target = player.focusPoint;
+        Instance.target = player.focusPoint.gameObject;
         Instance.camera.transform.position = player.head.transform.position;
         Instance.camera.transform.eulerAngles = player.head.transform.eulerAngles;
     }

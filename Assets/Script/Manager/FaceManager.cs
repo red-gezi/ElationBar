@@ -11,7 +11,7 @@ public class FaceManager : OVRLipSyncContextBase
     // Start is called before the first frame update
     [Header("人物模型")]
     public SkinnedMeshRenderer skinnedMeshRenderer = null;
-    public Chara currentChara=>GetComponent<PlayerManager>().currentPlayerChara;
+    public Chara currentChara=>GetComponent<CharaManager>().currentPlayerChara;
 
     public bool mute = true;
     public float gain = 1.0f;
